@@ -8,6 +8,8 @@ from openai import OpenAI
 load_dotenv()
 ai = OpenAI(api_key=os.getenv("KEY"))
 def main(id: str, language: str):
+    fallacies = "strawman fallacy,false cause fallacy,slippery slope fallacy,personal incredulity fallacy,loaded question fallacy,the gambler's fallacy,appeal to authority fallacyappeal to emotion fallacy,genetic fallacy,begging the question fallacy,bandwagon fallacy,ambiguity fallacy,burden of proof fallacy,composition/division fallacy,false equivalence fallacy,appeal to nature fallacy,the fallacy fallacy,No true Scotsman,Lump of labour fallacy,red herring fallacy".split(",")
+
     api = YouTubeTranscriptApi()
     targets = api.fetch(id, languages=[language]).snippets
     ans = ""
@@ -21,22 +23,18 @@ def main(id: str, language: str):
     link = "https://www.googleapis.com/customsearch/v1?key=" + os.getenv("SEARCH") + "&cx=53b4f01c6912d484d&q=" + title
     targets = (requests.get(link).json())["items"]
     
-    snippet = ""
+    google = ""
     for x in targets:
-        snippet += x["title"] + " " + x["snippet"] + "\n"
+        google += x["title"] + " " + x["snippet"] + "\n"
 
-    f1 = open("index.txt", "r")
-    target = f1.read().split("\n")
-    f1.close()
-
-    fallacies = ""
-    for x in target: 
+    logic = ""
+    for x in fallacies: 
         link = "https://www.googleapis.com/customsearch/v1?key=" + os.getenv("SEARCH") + "&cx=53b4f01c6912d484d&q=" + x
         data = (requests.get(link).json())["items"]
         for y in data:
-            fallacies += str(y["title"]) + " " + str(y["snippet"]) + "\n"
+            logic += str(y["title"]) + " " + str(y["snippet"]) + "\n"
 
-    target = "Find all the fallacies in this youtube video transcript: " + ans + ", list of fallacies: " + fallacies + " and fact check it aganist these google searches: " + snippet
+    target = "fact check and find the fallacies of this transcript: " + ans + ", fallacies: " + logic + ", google searches for fact checking: " + google + " in the same language of the script"
     response = ai.responses.create(
         model="o4-mini",
         input=target
@@ -45,9 +43,17 @@ def main(id: str, language: str):
     f2.write(str(response.output_text))
     f2.close()
 
-if __name__ == "__main__":
+    f3 = open("nobias.txt", "r")
+    ans = f3.read()
+    f3.close()
+
+    return ans
+
+def tool():
     args = argparse.ArgumentParser(prog="nobiaspy", description="NoBiaspy is a python cli tool to find logically fallacies in youtube transcripts and it also fact checks it using google search api")
     args.add_argument("-i", "--id", help="enter the youtube id to check for logically fallacies")
     args.add_argument("-l", "--language", help="enter the language of the given youtube video")
     parser = args.parse_args()
-    print(main(parser.id, parser.language))
+
+    return main(parser.id, parser.language)
+print(tool())

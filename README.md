@@ -1,9 +1,14 @@
 # NoBias - Don't be fooled easily
 
+You need to be patient, it takes a while for the AI to gather all the info from google and sort through the fallacies and transcript
+
 NoBias is a youtube bias detector that helps you with fact checking and fallacy finding.
 
 It summarizes the youtube description, Googles and fact checks the title and finds all the fallacies in the youtube video.
 
+Python Package: ``pip install nobiaspy --break-system-packages```
+
+Pipy link: https://pypi.org/project/nobiaspy
 How it works:
   
     1. It first gets the Youtube video description and transcript using the Youtube API.
