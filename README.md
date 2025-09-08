@@ -2,6 +2,8 @@
 
 NoBias is a youtube bias detector that helps you with fact checking and fallacy finding.
 
+It summarizes the youtube description, Googles and fact checks the title and finds all the fallacies in the youtube video.
+
 How it works:
   
     1. It first gets the Youtube video description and transcript using the Youtube API.
@@ -9,6 +11,8 @@ How it works:
     2. Then it gets data from other websites using the Google Search API and scraping sites like https://www.wikipedia.org, https://yourlogicalfallacyis.com and other news sites
      
     3. Lastly it using AI to cross reference the Youtube video transcript and description with a broad dataset from the internet and see if it is bias.
+
+    4. NoBias finds all the Fallacies, Googles and Summarizes the title, Summarizes the youtube video description
 
 Political Summary Options:
   
@@ -20,8 +24,6 @@ Political Summary Options:
      
     4. Purely Data Driven Summarizes (e.g from Wikipedia, yourlogicalfallacyis, google search API, government data and etc.)
 
-It can also see how many fallacies the video creator made during the video.
-
-It can also detect certain loaded terms like fascist, communist, greedy, blaming groups (e.g the rich or migrants) without nuance.
 
 Hope you enjoy NoBias and you avoid becoming polarized and ideologically rigid.
+
