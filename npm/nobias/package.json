@@ -1,9 +1,13 @@
 {
   "name": "nobias",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "repository": {
+    "url": "https://github.com/Jamcha123/NoBias",
+    "directory": "https://github.com/Jamcha123/NoBias"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

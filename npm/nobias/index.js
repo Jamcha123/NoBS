@@ -43,7 +43,7 @@ export default class nobias{
             google += items[i]["title"] + " " + items[i]["snippet"] + "\n"
         }
 
-        const summary = "http://localhost:5000/nobias-cc487/us-central1/checker?fallacies=" + words + "&searches=" + google + "&apikey=" + options["apikey"] + "&transcript=" + ans
+        const summary = "https://checker-uztqrdih7q-uc.a.run.app?fallacies=" + words + "&searches=" + google + "&apikey=" + options["apikey"] + "&transcript=" + ans
         const webby = (await axios.get(summary))["data"]
 
         fs.createWriteStream("nobias.txt", "utf-8").write(webby)
