@@ -10,7 +10,7 @@ Github: https://github.com/Jamcha123/NoBias
 
 The nobias python package: https://pypi.org/project/nobiaspy
 
-Python Package: ```pip install nobiaspy --break-system-packages```
+```pip install nobiaspy --break-system-packages```
 
 The NPM package: https://www.npmjs.com/package/nobias
 
@@ -25,16 +25,6 @@ How it works:
     3. Lastly it using AI to cross reference the Youtube video transcript and description with a broad dataset from the internet and see if it is bias.
 
     4. NoBias finds all the Fallacies, Googles and Summarizes the title, Summarizes the youtube video description
-
-Political Summary Options:
-  
-    1. Left Wing Summarizes (e.g social justice, equality and welfare)
-  
-    2. Right Wing Summarizes (e.g personal responsibility, economic growth, low taxes and deregulation)
-  
-    3. Centrist Summarizes (e.g compromise, data driven, left wing and right wing mixed approach)
-     
-    4. Purely Data Driven Summarizes (e.g from Wikipedia, yourlogicalfallacyis, google search API, government data and etc.)
 
 
 Hope you enjoy NoBias and you avoid becoming polarized and ideologically rigid.
