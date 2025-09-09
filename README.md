@@ -8,7 +8,7 @@ It summarizes the youtube description, Googles and fact checks the title and fin
 
 Python Package: ``pip install nobiaspy --break-system-packages```
 
-Pipy link: https://pypi.org/project/nobiaspy
+pipy link: https://pypi.org/project/nobiaspy
 How it works:
   
     1. It first gets the Youtube video description and transcript using the Youtube API.

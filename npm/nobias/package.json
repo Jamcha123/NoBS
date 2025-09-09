@@ -1,0 +1,29 @@
+{
+  "name": "nobias",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^1.17.0",
+    "axios": "^1.11.0",
+    "cheerio": "^1.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "http-proxy": "^1.18.1",
+    "mongodb": "^6.19.0",
+    "nodemon": "^3.1.10",
+    "openai": "^5.19.1",
+    "redis": "^5.8.2",
+    "socket.io": "^4.8.1",
+    "stripe": "^18.5.0",
+    "youtube-transcript-plus": "^1.1.1"
+  }
+}
