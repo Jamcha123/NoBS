@@ -9,7 +9,7 @@ dotenv.config()
 const ai = new OpenAI({apiKey: process.env["KEY"]})
 
 export default class nobias{
-    async factChecker(youtubeurl, language){
+    async factChecker(youtubeurl, language, options = {"apikey": "no-key"}){
         let youtubeid = youtubeurl.split("=")
         if(youtubeid.length == 1){
             youtubeid = youtubeid[0]
@@ -28,7 +28,6 @@ export default class nobias{
         for(let i = 0; i != target.length; i++){
             ans += target[i]["text"] + "\n"
         }
-
         let words = ""
         for(let i = 0; i != fallacies.length; i++){
             words += fallacies[i] + "\n"
@@ -44,21 +43,10 @@ export default class nobias{
             google += items[i]["title"] + " " + items[i]["snippet"] + "\n"
         }
 
-        const response = await ai.chat.completions.create({
-            model: "gpt-4o-search-preview-2025-03-11",
-            web_search_options: {search_context_size: "high"},
-            messages: [
-                {
-                    role: "user", 
-                    content: [
-                        {type: "text", text: "find all the fallacies and fact check this transcript: " + ans + " and here is the list of fallacies: " + fallacies + " and here is the google searches snippets: " + google + ", thank you"}
-                    ]
-                }
-            ]
-        })
-        fs.createWriteStream("nobias.txt", "utf-8").write(response.choices[0].message["content"])
-        return response.choices[0].message["content"]
+        const summary = "http://localhost:5000/nobias-cc487/us-central1/checker?fallacies=" + words + "&searches=" + google + "&apikey=" + options["apikey"] + "&transcript=" + ans
+        const webby = (await axios.get(summary))["data"]
+
+        fs.createWriteStream("nobias.txt", "utf-8").write(webby)
+        return webby
     }
 }
-const obj = new nobias()
-console.log(await obj.factChecker("https://www.youtube.com/watch?v=GlkCw1U8oXE", "en"))
