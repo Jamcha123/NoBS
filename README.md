@@ -8,7 +8,7 @@ It summarizes the youtube description, Googles and fact checks the title and fin
 
 Github: https://github.com/Jamcha123/NoBias
 
-The nobias python package: https://pypi.org/project/nobiaspy
+The noBS python package: https://pypi.org/project/nobiaspy
 
 ```pip install nobiaspy --break-system-packages```
 
