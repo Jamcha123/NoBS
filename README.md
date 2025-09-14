@@ -6,6 +6,8 @@ NoBias is a youtube bias detector that helps you with fact checking and fallacy 
 
 It summarizes the youtube description, Googles and fact checks the title and finds all the fallacies in the youtube video.
 
+Web App: https://nobias-cc487.firebaseapp.com
+
 Github: https://github.com/Jamcha123/NoBias
 
 The nobias python package: https://pypi.org/project/nobiaspy
@@ -25,7 +27,6 @@ How it works:
     3. Lastly it using AI to cross reference the Youtube video transcript and description with a broad dataset from the internet and see if it is bias.
 
     4. NoBias finds all the Fallacies, Googles and Summarizes the title, Summarizes the youtube video description
-
 
 Hope you enjoy NoBias and you avoid becoming polarized and ideologically rigid.
 

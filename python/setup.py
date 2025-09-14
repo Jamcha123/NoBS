@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="nobiaspy",
-    version="1.0.2",
+    version="1.0.3",
     packages=find_packages(where="./nobiaspy"),
     description="nobiaspy is python cli tool that finds logically fallacies in youtube transcript",
     entry_points={

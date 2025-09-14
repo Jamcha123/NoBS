@@ -3,6 +3,7 @@ import admin from 'firebase-admin'
 import dotenv from 'dotenv'
 import {OpenAI} from 'openai'
 
+
 const facts = async (key, script, fallacies, searches) => {
     const ai = new OpenAI({apiKey: key})
     const response = await ai.chat.completions.create({

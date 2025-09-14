@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+h1, p, input, button, li a, a, li{
+    font-family: "Figtree", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.blobs{
+    animation: value 20s ease-in-out infinite;
+}
+@keyframes value {
+    from, to{scale: 1; transform: rotateZ(-45deg);}
+    50%{scale: 2; transform: rotateZ(15deg);}
+}
+@keyframes scaling {
+    from{transform: scaleX(0) translateX(-100%)}
+    to{transform: scaleX(1) translateX(0%)}
+}
+@layer components{
+    img{
+        @apply w-[100%] h-[100%] m-auto p-[0] bg-transparent relative
+    }
+    #profile{
+        @apply w-[50%] h-[100%] m-auto p-[0] bg-transparent relative
+    }
+    .items{
+        @apply w-[100%] h-[100%] m-auto p-[0] bg-transparent relative
+        flex flex-col align-middle justify-center text-center
+        transition-all duration-300 
+    }
+    .pointer{
+        @apply w-[5em] h-[5em] m-auto p-[0] bg-transparent z-[100]
+        border-[2px] border-white rounded-2xl opacity-[0.5] fixed
+    }
+}
+#fire_app_check_[DEFAULT]{
+    display: flex;
+    z-index: 200;
+}

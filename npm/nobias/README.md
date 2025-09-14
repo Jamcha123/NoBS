@@ -1,34 +1,34 @@
-#nobias npm package
+#nobias npm package - don't be fooled
+be patient the AI needs to go though all the data and fallacies to fact check the video
 
-nobias - find fallacies and fact check youtube videos
+How to use: 
 
-to use nobias you need an openai key.
-openai website: https://platform.openai.com/docs/overview
+    first you need an openai api key: https://platform.openai.com/docs/overview
 
-nobias is a npm package that allows you to find fallacies and fact checks youtube videos.
+    second: npm install nobias
 
-1. install it: ``` npm install nobias ```
+    third, add it: const obj = new nobias()
 
-2. import it: ``` import nobias from 'nobias' ```
-
-3. initialize it: ```const obj = new nobias()```
 
 function list:
 
-    1. await factChecker(<youtubeid or youtubeurl>, <language>, {apikey: <your openai api key>}) // its a async promise so use await
+    1. await factChecker(<youtubeid or youtubeurl>, <language>, {apikey: <your openai api key>})
 
-arguments: 
 
-    1. factChecker() has a youtubeid or url argument that you either enter the url or the id of the youtube video
+arguments of factChecker:
 
-    2. factChecker() also has a language argument where you enter the language of the youtube video
+    1. youtubeurl (the youtube video url to fact check and find fallacies, you can use just the id too)
 
-    3. also don't forget to add your openai key to the factChecker function as a dictionary
+    2. language (the language code of said video e.g en, sv, es, de, fr and etc)
 
+    3. {apikey: <your openai key>} (just your openai key so you can fact check)
+
+
+openai: https://platform.openai.com/docs/overview
 
 github: https://github.com/Jamcha123/NoBias
 
-the nobias python package: https://pypi.org/project/nobiaspy
+my github sponsor profile (if you want to sponser me): https://github.com/sponsors/Jamcha123
 
 
 hope you enjoy fact checking videos and finding logically fallacies

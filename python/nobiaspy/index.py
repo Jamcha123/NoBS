@@ -37,6 +37,7 @@ def main(id: str, language: str):
     target = "fact check and find the fallacies of this transcript: " + ans + ", fallacies: " + logic + ", google searches for fact checking: " + google + " in the same language of the script"
     response = ai.responses.create(
         model="o4-mini",
+        tools=[{"type": "web_search_2025_08_26"}],
         input=target
     )
     f2 = open("nobias.txt", "w")
