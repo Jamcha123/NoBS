@@ -50,5 +50,3 @@ export default class nobias{
         return webby
     }
 }
-const obj = new nobias()
-console.log(await obj.factChecker("3-rqeG5vsLs", "en", {apikey: "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"}))
