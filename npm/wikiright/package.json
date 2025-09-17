@@ -1,0 +1,32 @@
+{
+  "name": "wikiright",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "url": "https://github.com/Jamcha123/NoBS"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure-rest/ai-inference": "^1.0.0-beta.6",
+    "@azure/core-auth": "^1.10.1",
+    "@google/genai": "^1.20.0",
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "firebase": "^12.2.1",
+    "http-proxy": "^1.18.1",
+    "nodemon": "^3.1.10",
+    "openai": "^5.20.3",
+    "socket.io": "^4.8.1",
+    "stripe": "^18.5.0"
+  }
+}

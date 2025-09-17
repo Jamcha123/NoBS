@@ -1,22 +1,20 @@
-#nobiaspy - finding youtube fallacies
+#nobiaspy - youtube fallacy and fact checker
+Be patient with it, i am using gemini api so it might take a while.
 
-nobiaspy allows you to check youtube videos for logically fallacies.
 
-installation: 
+It works by adding the youtube id or url and language code e.g en, sv, es, fr and etc.
+Then it complies a list of fallacies it finds in said youtube transcript and fact checks it using google search api.
 
-```
-pip install nobiaspy --break-system-
-```
+Finally it compiles a summary of the youtube videos and explains every fallacy found and a quick fact check.
 
-first get the help menu:
-```
-    nobias --help 
-```
+how to use: 
+    
+    1. pip install nobiaspy --break-system-packages
 
-then add the youtube video id and language tag e.g english (en), swedish (sv), spanish (es), german (de) and etc.
+    2. nobiaspy --help 
 
-it uses openai o4-mini model and google search engine api to find logically fallacies.
+just run ``` nobiaspy --help ``` and it tells you what to do.
 
-Then nobiaspy fact checks the video title and description based on the google searches.
+bye and hope you don't get fooled by youtube videos.
 
-hope you enjoy finding logically 
+disclaimer: AI isn't perfect and can still make mistakes.

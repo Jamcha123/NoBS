@@ -1,0 +1,20 @@
+{
+  "name": "nobs",
+  "version": "1.0.0",
+  "description": "You need to be patient, it takes a while for the AI to gather all the info from google and sort through the fallacies and transcript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamcha123/NoBias.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jamcha123/NoBias/issues"
+  },
+  "homepage": "https://github.com/Jamcha123/NoBias#readme"
+}

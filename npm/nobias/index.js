@@ -3,13 +3,11 @@ import fs from 'fs'
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 import {YoutubeTranscript, fetchTranscript} from 'youtube-transcript-plus'
-import dotenv from 'dotenv'
-
-dotenv.config()
-const ai = new OpenAI({apiKey: process.env["KEY"]})
+import ModelClient, {isUnexpected} from '@azure-rest/ai-inference'
+import {AzureKeyCredential} from '@azure/core-auth'
 
 export default class nobias{
-    async factChecker(youtubeurl, language, options = {"apikey": "no-key"}){
+    async factChecker(youtubeurl, language){
         let youtubeid = youtubeurl.split("=")
         if(youtubeid.length == 1){
             youtubeid = youtubeid[0]
@@ -32,21 +30,16 @@ export default class nobias{
         for(let i = 0; i != fallacies.length; i++){
             words += fallacies[i] + "\n"
         }
-        const link = "https://www.googleapis.com/youtube/v3/videos?key=" + process.env["YOUTUBE"] + "&part=snippet&id=" + youtubeid
+        const link = "https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAdCP1jtNteYDLMsBBrbUlrxdOExlUEt3s&part=snippet&id=" + youtubeid
         const {title, description} = (await axios.get(link))["data"]["items"][0]["snippet"]
 
-        const search = "https://www.googleapis.com/customsearch/v1?key=" + process.env["YOUTUBE"] + "&cx=53b4f01c6912d484d&q=" + title
+        const search = "https://www.googleapis.com/customsearch/v1?key=AIzaSyAdCP1jtNteYDLMsBBrbUlrxdOExlUEt3s&cx=53b4f01c6912d484d&q=" + title
         const  {items} = (await axios.get(search))["data"]
 
         let google = ""
         for(let i = 0; i != items.length; i++){
             google += items[i]["title"] + " " + items[i]["snippet"] + "\n"
         }
-
-        const summary = "https://checker-uztqrdih7q-uc.a.run.app?fallacies=" + words + "&searches=" + google + "&apikey=" + options["apikey"] + "&transcript=" + ans
-        const webby = (await axios.get(summary))["data"]
-
-        fs.createWriteStream("nobias.txt", "utf-8").write(webby)
-        return webby
+        return {"fallacies": fallacies, "google": google, "transcript": ans}
     }
 }
