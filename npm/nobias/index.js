@@ -30,10 +30,10 @@ export default class nobias{
         for(let i = 0; i != fallacies.length; i++){
             words += fallacies[i] + "\n"
         }
-        const link = "https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAdCP1jtNteYDLMsBBrbUlrxdOExlUEt3s&part=snippet&id=" + youtubeid
+        const link = "https://www.googleapis.com/youtube/v3/videos?key=&part=snippet&id=" + youtubeid
         const {title, description} = (await axios.get(link))["data"]["items"][0]["snippet"]
 
-        const search = "https://www.googleapis.com/customsearch/v1?key=AIzaSyAdCP1jtNteYDLMsBBrbUlrxdOExlUEt3s&cx=53b4f01c6912d484d&q=" + title
+        const search = "https://www.googleapis.com/customsearch/v1?key=&cx=53b4f01c6912d484d&q=" + title
         const  {items} = (await axios.get(search))["data"]
 
         let google = ""
